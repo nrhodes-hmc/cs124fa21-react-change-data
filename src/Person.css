@@ -1,0 +1,22 @@
+
+.person {
+    display: flex;
+    width: 400pt;
+    justify-content: space-between;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.email {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.person {
+    border: 1px solid white;
+}
+
+.selected {
+    border-color: black;
+}
