@@ -12,7 +12,6 @@ function Person(props) {
                 key={props.id}
                 id={props.id}
                 onClick={(e) => {
-                    console.log('onclick', e);
                     props.onRowClick(e.currentTarget.id);
                 }}
         >

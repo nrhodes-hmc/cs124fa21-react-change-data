@@ -4,7 +4,6 @@ import React, {useState} from 'react';
 
 function People(props) {
     const [selectedId, setSelectedId] = useState(null);
-    console.log('People', props);
     return (
         <div>
             <h1>People ({selectedId === null? 0 : 1}/{props.list.length} selected)</h1>
