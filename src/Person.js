@@ -1,7 +1,5 @@
 import './Person.css';
 
-import React from 'react';
-
 function Person(props) {
     const classes = ["person "];
     if (props.selected) {
