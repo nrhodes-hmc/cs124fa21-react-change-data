@@ -2,7 +2,9 @@ import './App.css';
 
 import People from './People';
 
-const data = [
+import { useState } from 'react';
+
+const initialData = [
     {
         id: "1276",
         name: "Neil Rhodes",
@@ -20,6 +22,7 @@ const data = [
 
 
 function App() {
+    const [data, ] = useState(initialData);
     return <div>
         <People list={data}/></div>;
 }
