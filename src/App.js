@@ -3,6 +3,7 @@ import './App.css';
 import People from './People';
 
 import { useState } from 'react';
+import {generateUniqueID} from "web-vitals/dist/modules/lib/generateUniqueID";
 
 const initialData = [
     {
@@ -22,9 +23,34 @@ const initialData = [
 
 
 function App() {
-    const [data, ] = useState(initialData);
+    const [data, setData] = useState(initialData);
+
+    function handleDeletePerson(personId) {
+        setData(data.filter(person => person.id !==personId))
+    }
+
+    function handleAddPerson() {
+        setData([...data, {
+            id: generateUniqueID(),
+            name: "",
+            email: "",
+            phone: ""
+        }])
+    }
+
+    function handlePersonFieldChanged(personId, field, value) {
+        setData(data.map(
+            person => person.id !==personId
+                ? person
+                : {...person, [field]: value}))
+    }
+
     return <div>
-        <People list={data}/></div>;
+        <People list={data}
+                onDeletePerson={handleDeletePerson}
+                onAddPerson={handleAddPerson}
+                onPersonFieldChanged={handlePersonFieldChanged}
+        /></div>;
 }
 
 export default App;

@@ -1,5 +1,6 @@
 import './Person.css';
 
+import PersonField from './PersonField.js'
 function Person(props) {
     const classes = ["person "];
     if (props.selected) {
@@ -13,9 +14,9 @@ function Person(props) {
                     props.onRowClick(e.currentTarget.id);
                 }}
         >
-        <div className="name">{props.name}</div>
-        <div className="email">{props.email}</div>
-        <div className="phone">{props.phone}</div>
+        <PersonField field="name" {...props}/>
+        <PersonField field="email" {...props}/>
+        <PersonField field="phone" {...props}/>
     </div>
 }
 export default Person;
