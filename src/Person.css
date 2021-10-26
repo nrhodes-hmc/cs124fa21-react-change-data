@@ -9,7 +9,8 @@
 }
 
 .email {
-    width: 95%
+    width: 95%;
+    color: #5a5a5a;
 }
 
 .phone {
@@ -21,7 +22,3 @@
     border: 1px solid white;
 }
 
-
-.selected {
-    background-color: lightgray;
-}

@@ -1,6 +1,14 @@
 .people {
 }
 
+tr:nth-child(even) {
+    background: #41B478;
+}
+
+tr:nth-child(even) input {
+    background: #41B478;
+}
+
 table {
     width: 100%;
 }
@@ -26,4 +34,8 @@ table {
 
 .delete-button {
     margin-left: 5px;
+}
+
+#webpage-link {
+    text-decoration: underline;
 }

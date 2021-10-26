@@ -39,8 +39,15 @@ function People(props) {
     }
 
     const numSelectedString = `${selectedIds.length} of ${props.list.length} selected`;
+
     return (
         <>
+            {/* NOTE: feel free to re-order items in the below JSX. */}
+            {/* Following div will open the link in a new page */}
+            <div id="webpage-link"
+                 onClick={() => window.open("https://www.cs.hmc.edu/~rhodes/courses/cs124/fa21/schedule.html", '_blank').focus()}>
+                CS 124 Webpage
+            </div>
             <div className="buttons">
                 {selectedIds.length > 0 &&
                 <button className="delete-button"
@@ -91,7 +98,9 @@ function People(props) {
                 </tbody>
             </table>
             <h1 id="h1">People ({numSelectedString})</h1>
-        </>);
+        </>
+    )
+        ;
 }
 
 export default People;
