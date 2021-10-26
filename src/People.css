@@ -1,0 +1,29 @@
+.people {
+}
+
+table {
+    width: 100%;
+}
+
+.header {
+    font-weight: bold;
+    font-size: small;
+    width: 25%;
+}
+
+.name {
+    width: 50%;
+    font-size: small;
+}
+
+
+.buttons {
+    width: 80px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: left;
+}
+
+.delete-button {
+    margin-left: 5px;
+}

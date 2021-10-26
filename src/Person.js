@@ -1,22 +1,17 @@
 import './Person.css';
 
 import PersonField from './PersonField.js'
-function Person(props) {
-    const classes = ["person "];
-    if (props.selected) {
-        classes.push("selected");
-    }
 
-    return <div className={classes.join(" ")}
-                key={props.id}
-                id={props.id}
-                onClick={(e) => {
-                    props.onRowClick(e.currentTarget.id);
-                }}
-        >
+function Person(props) {
+
+    return <tr className={"person"}>
+        <td><input type={"checkbox"} checked={props.selected}
+               onChange={()=>props.onToggleSelected(props.id)}/>
+        </td>
         <PersonField field="name" {...props}/>
         <PersonField field="email" {...props}/>
         <PersonField field="phone" {...props}/>
-    </div>
+    </tr>
 }
+
 export default Person;

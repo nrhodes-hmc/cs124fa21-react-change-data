@@ -2,7 +2,7 @@ import './App.css';
 
 import People from './People';
 
-import { useState } from 'react';
+import {useState} from 'react';
 import {generateUniqueID} from "web-vitals/dist/modules/lib/generateUniqueID";
 
 const initialData = [
@@ -21,12 +21,11 @@ const initialData = [
 ];
 
 
-
 function App() {
     const [data, setData] = useState(initialData);
 
-    function handleDeletePerson(personId) {
-        setData(data.filter(person => person.id !==personId))
+    function handleDeletePeople(personIds) {
+        setData(data.filter(person => !personIds.includes(person.id)))
     }
 
     function handleAddPerson() {
@@ -40,17 +39,19 @@ function App() {
 
     function handlePersonFieldChanged(personId, field, value) {
         setData(data.map(
-            person => person.id !==personId
+            person => person.id !== personId
                 ? person
                 : {...person, [field]: value}))
     }
 
-    return <div>
+
+    return <div className="app">
         <People list={data}
-                onDeletePerson={handleDeletePerson}
+                onDeletePeople={handleDeletePeople}
                 onAddPerson={handleAddPerson}
                 onPersonFieldChanged={handlePersonFieldChanged}
-        /></div>;
+        />
+        </div>;
 }
 
 export default App;
